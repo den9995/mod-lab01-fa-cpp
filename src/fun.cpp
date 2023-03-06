@@ -5,26 +5,25 @@
 unsigned int faStr1(const char *str) {
     bool isWord = 0, isWrong = 0;
     int i = 0, count = 0;
-    while(str[i] != 0){
+    while (str[i] != 0) {
         char curr = str[i];
-        if(isspace(curr)){
-            if(isWord && !isWrong){
+        if (isspace(curr)) {
+            if (isWord && !isWrong) {
                 count++;
             }
             isWord = 0;
             isWrong = 0;
             i++;
         }
-        if(!isspace(curr)){
+        if (!isspace(curr)) {
             isWord = 1;
-            if(isdigit(curr)){
+            if (isdigit(curr)) {
                 isWrong = 1;
             }
             i++;
         }
-
     }
-    if(isWord && !isWrong){
+    if (isWord && !isWrong) {
         count++;
     }
     return count;
