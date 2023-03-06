@@ -6,7 +6,7 @@ unsigned int faStr1(const char *str) {
     bool isWord = 0, isWrong = 0;
     int i = 0, count = 0;
     while(str[i] != 0){
-        char curr=str[i];
+        char curr = str[i];
         if(isspace(curr)){
             if(isWord && !isWrong){
                 count++;
