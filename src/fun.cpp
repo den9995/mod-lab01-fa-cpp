@@ -80,6 +80,7 @@ unsigned int faStr3(const char *str) {
     if (isWord) {
         count++;
     }
-    return round((float) wordsLen / count);
-//onlyint: return wordsLen / count + (wordsLen % count > count / 2) ? 1 : 0
+    return (wordsLen + count / 2) / count;
+//  return wordsLen / count + (wordsLen % count > count / 2) ? 1 : 0
+//  return round((float) wordsLen / count);
 }
