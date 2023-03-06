@@ -60,5 +60,26 @@ unsigned int faStr2(const char *str) {
 }
 
 unsigned int faStr3(const char *str) {
-    return 0;
+    bool isWord = 0;
+    int i = 0, count = 0, wordsLen = 0, fullLen = 0;
+    while (str[i] != 0) {
+        char curr = str[i];
+        if (isspace(curr)) {
+            if (isWord) {
+                count++;
+            }
+            isWord = 0;
+            i++;
+        }
+        if (!isspace(curr)) {
+            isWord = 1;
+            wordsLen++;
+            i++;
+        }
+    }
+    if (isWord) {
+        count++;
+    }
+    return round((float) wordsLen / count);
+//onlyint: return wordsLen / count + (wordsLen % count > count / 2) ? 1 : 0
 }
